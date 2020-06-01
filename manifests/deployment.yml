@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: kubserv 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kubserv 
+    spec:
+      containers:
+        - name: kubserv 
+          image: regkub.azurecr.io/kubserv
+          ports:
+          - containerPort: 2000
